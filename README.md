@@ -10,7 +10,7 @@
   
 -----------------Here’s a description of each property for CAEmitterCell:---------------------
 
-  birthRate  : specify the number of particles emitted per second.
+  	birthRate  : specify the number of particles emitted per second.
 	lifetime : specify the number of seconds a particle will be visible on the screen.
 	velocity : specify the initial velocity of the particle.
 	velocityRange : specify the amount by which the velocity can vary.
