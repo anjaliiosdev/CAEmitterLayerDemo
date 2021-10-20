@@ -29,21 +29,21 @@ class EmitterLayerController: UIViewController {
         particlesLayer.emitterMode = .outline
         particlesLayer.renderMode = .additive
         
-        let cell = CAEmitterCell()
-        cell.name = "Parent"
-        cell.birthRate = 5.0
-        cell.lifetime = 2.5
-        cell.velocity = 300.0
-        cell.velocityRange = 100.0
-        cell.yAcceleration = -100.0
-        cell.emissionLongitude = -90.0 * (.pi / 180.0)
-        cell.emissionRange = 45.0 * (.pi / 180.0)
-        cell.scale = 0.0
-        cell.redRange = 0.9
-        cell.greenRange = 0.9
-        cell.blueRange = 0.9
+        let parentCell = CAEmitterCell()
+        parentCell.name = "Parent"
+        parentCell.birthRate = 5.0
+        parentCell.lifetime = 2.5
+        parentCell.velocity = 300.0
+        parentCell.velocityRange = 100.0
+        parentCell.yAcceleration = -100.0
+        parentCell.emissionLongitude = -90.0 * (.pi / 180.0)
+        parentCell.emissionRange = 45.0 * (.pi / 180.0)
+        parentCell.scale = 0.0
+        parentCell.redRange = 0.9
+        parentCell.greenRange = 0.9
+        parentCell.blueRange = 0.9
         
-        let image1_2 = UIImage(named: "sparkle")?.cgImage
+        let imgSparkle = UIImage(named: "sparkle")?.cgImage
         let subcell = CAEmitterCell()
         subcell.name = "Firework"
         subcell.birthRate = 20000.0
@@ -57,10 +57,10 @@ class EmitterLayerController: UIViewController {
         subcell.scale = 0.1
         subcell.scaleSpeed = 0.09
         subcell.alphaSpeed = -0.7
-        subcell.contents = image1_2
+        subcell.contents = imgSparkle
         
-        cell.emitterCells = [subcell]
-        particlesLayer.emitterCells = [cell]
+        parentCell.emitterCells = [subcell]
+        particlesLayer.emitterCells = [parentCell]
         
         self.labelAnimation()
     }
@@ -76,4 +76,3 @@ class EmitterLayerController: UIViewController {
         }, completion: nil)
     }
 }
-
